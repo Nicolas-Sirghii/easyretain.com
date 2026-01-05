@@ -88,3 +88,60 @@ function asideSectionTogglerBtn() {
   aside.classList.toggle("open");
   navTogglerBtn.classList.toggle("open");
 }
+//....................................................................................................
+// for sending a message
+
+
+
+
+
+const popup = document.getElementById("popup");
+const popupClose = document.getElementById("popup-close");
+
+function showPopup(message) {
+  document.getElementById("popup-message").innerText = message;
+  popup.classList.add("show");
+
+  // auto-close after 5 seconds
+  setTimeout(() => {
+    popup.classList.remove("show");
+  }, 5000);
+}
+
+// close when clicking the close button
+popupClose.addEventListener("click", () => {
+  popup.classList.remove("show");
+});
+
+
+
+const sendBtn = document.querySelector(".send-message");
+
+sendBtn.addEventListener("click", (e) => {
+  e.preventDefault();
+
+   sendBtn.classList.add("shrink");
+    setTimeout(() => sendBtn.classList.remove("shrink"), 100); // back to normal
+
+  const inputs = document.querySelectorAll(".contact-form .form-control");
+
+  const params = {
+    name: inputs[0].value.trim(),
+    email: inputs[1].value.trim(),
+    subject: inputs[2].value.trim(),
+    message: inputs[3].value.trim(),
+  };
+
+    emailjs
+  .send("service_j3qd9g5", "template_u4j40i1", params)
+  .then(() => {
+    showPopup("Thank you for reaching out! I will reply as soon as possible.");
+    inputs.forEach(input => input.value = "");
+  })
+  .catch((error) => {
+    console.error("EmailJS error:", error);
+    showPopup("Oops! Something went wrong. Please try again.");
+  });
+
+});
+

@@ -171,17 +171,21 @@ Copyright: 2023 ©MdRasen
                     <div class="skills-item padd-15">
                       <h5>JS</h5>
                       <div class="progress">
-                        <div class="progress-in" style="width: 65%"></div>
-                        <div class="skill-percent">65%</div>
+                        <div class="progress-in" style="width: 95%"></div>
+                        <div class="skill-percent">95%</div>
                       </div>
                     </div>
+                     <!-- Home Section End -->
                     <div class="skills-item padd-15">
                       <h5>React</h5>
                       <div class="progress">
                         <div class="progress-in" style="width: 80%"></div>
-                        <div class="skill-percent">80%</div>
+                        <div class="skill-percent">10%</div>
                       </div>
                     </div>
+                     <!-- Home Section End -->
+                  
+                     <!-- Home Section End -->
                   </div>
                 </div>
               </div>
@@ -697,7 +701,7 @@ Copyright: 2023 ©MdRasen
               <div class="row">
                 <div class="form-item col-12 padd-15">
                   <div class="form-group">
-                    <button type="submit" class="btn">Send Message</button>
+                    <button type="submit" class="btn send-message" >Send Message</button>
                   </div>
                 </div>
               </div>
@@ -731,6 +735,22 @@ Copyright: 2023 ©MdRasen
   <!-- Custom JS -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.12/typed.min.js"
     referrerpolicy="no-referrer"></script>
+
+    <div class="popup-overlay" id="popup">
+  <div class="popup-content">
+    <p id="popup-message">Thank you for reaching out. I will respond as soon as possible.</p>
+    <button id="popup-close">Close</button>
+  </div>
+</div>
+
+
+
+  <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+  <script>
+    emailjs.init("csZZevfFT25aEn_dj");
+  </script>
+
+
   <script src="js/script.js"></script>
   <script src="js/style-switcher.js"></script>
 </body>

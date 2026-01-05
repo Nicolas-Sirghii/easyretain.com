@@ -159,10 +159,17 @@ ul {
   border: none;
   background: var(--skin-color);
   transition: all 0.3s ease;
+  cursor: pointer;
+  transition: transform 0.1s ease;
 }
+
 
 .btn:hover {
   transform: scale(1.05);
+}
+
+.btn.shrink {
+  transform: scale(0.9);
 }
 
 .shadow-dark {
